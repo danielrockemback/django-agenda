@@ -1,6 +1,7 @@
 {% extends 'static/base/base.html' %}
 
 {% block content %}
+{% if page_obj %}
 <div class="single-contact">
   <h1 class="single-contact-name">
     {{ contact.first_name }} {{ contact.last_name }}
@@ -11,4 +12,11 @@
   <p><b>Description:</b> {{ contact.description }}</p>
   <p><b>Category:</b> {{ contact.category.name }}</p>
 </div>
+{% else %}
+  <div class="single-contact">
+    <h1 class="single-contact-name">
+      Nenhum contato encontrado.
+    </h1>
+  </div>
+{% endif %}
 {% endblock content %}
