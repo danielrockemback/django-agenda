@@ -44,3 +44,10 @@ def contact(request, contact_id):
     context = {'contact': single_contact, 'site_title': site_title}
 
     return render(request, 'contact.html', context)
+
+
+def create(request):
+    if request.method == 'POST':
+        ...
+    context = {}
+    return render(request, 'create.html', context)
